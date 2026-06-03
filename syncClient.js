@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const FN          = '/netlify/functions/sync';
+  const FN          = '/.netlify/functions/sync';
   const POLL_LIVE   = 10 * 60 * 1000;   // 10 min during a match window
   const WIN_BEFORE  = 30 * 60 * 1000;   // window opens 30 min before kickoff
   const WIN_AFTER   = 120 * 60 * 1000;  // window closes 120 min after kickoff
