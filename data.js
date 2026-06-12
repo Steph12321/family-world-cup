@@ -86,8 +86,8 @@ const DATA = {
 
     // ── Group A ──────────────────────────────────────────────
     // MD1
-    { id: "gs_a1", stage: "Group A", homeTeam: "mex", awayTeam: "rsa", kickoffUTC: "2026-06-11T19:00:00Z", homeScore: 1, awayScore: 0, status: "live" },
-    { id: "gs_a2", stage: "Group A", homeTeam: "kor", awayTeam: "cze", kickoffUTC: "2026-06-12T02:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_a1", stage: "Group A", homeTeam: "mex", awayTeam: "rsa", kickoffUTC: "2026-06-11T19:00:00Z", homeScore: 2, awayScore: 0, status: "finished" },
+    { id: "gs_a2", stage: "Group A", homeTeam: "kor", awayTeam: "cze", kickoffUTC: "2026-06-12T02:00:00Z", homeScore: 2, awayScore: 1, status: "finished" },
     // MD2
     { id: "gs_a3", stage: "Group A", homeTeam: "cze", awayTeam: "rsa", kickoffUTC: "2026-06-18T16:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_a4", stage: "Group A", homeTeam: "mex", awayTeam: "kor", kickoffUTC: "2026-06-19T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
