@@ -5,6 +5,7 @@
 
   // ── State ──────────────────────────────────────────
   let activeFilter = null; // null = All, or player name string
+  let currentPage  = 'main'; // 'main' | 'tally'
 
   // ── Lookup maps built on init ──────────────────────
   const playerMap = {};  // name → player object
@@ -65,10 +66,15 @@
     app.innerHTML = '';
 
     app.appendChild(renderHeader());
-    app.appendChild(renderLegend());
-    app.appendChild(renderGroupSection(eliminated));
-    app.appendChild(renderKnockoutSections(eliminated));
-    app.appendChild(renderPlaceholder());
+
+    if (currentPage === 'tally') {
+      app.appendChild(renderTallyPage());
+    } else {
+      app.appendChild(renderLegend());
+      app.appendChild(renderGroupSection(eliminated));
+      app.appendChild(renderKnockoutSections(eliminated));
+      app.appendChild(renderPlaceholder());
+    }
   }
 
   // ── Header ──────────────────────────────────────────
@@ -82,13 +88,25 @@
     left.appendChild(el('div', 'header-sub', '9 players · 48 teams · NZT'));
     row.appendChild(left);
 
-    if (anyLive()) {
+    const right = el('div', 'header-right');
+
+    if (anyLive() && currentPage === 'main') {
       const badge = el('div', 'live-badge');
       badge.appendChild(el('div', 'live-dot'));
       badge.appendChild(document.createTextNode('Live'));
-      row.appendChild(badge);
+      right.appendChild(badge);
     }
 
+    const tallyBtn = el('button', currentPage === 'tally' ? 'tally-btn tally-btn--active' : 'tally-btn');
+    tallyBtn.type = 'button';
+    tallyBtn.textContent = currentPage === 'tally' ? 'Results' : 'Tally';
+    tallyBtn.addEventListener('click', () => {
+      currentPage = currentPage === 'tally' ? 'main' : 'tally';
+      render();
+    });
+    right.appendChild(tallyBtn);
+
+    row.appendChild(right);
     header.appendChild(row);
     return header;
   }
@@ -347,6 +365,98 @@
     row.appendChild(info);
     row.appendChild(pill);
     return row;
+  }
+
+  // ── Tally page ───────────────────────────────────────
+
+  function computeTally() {
+    const tally = {};
+    DATA.players.forEach(p => {
+      tally[p.name] = { wins: 0, draws: 0, losses: 0, played: 0 };
+    });
+
+    DATA.matches.forEach(m => {
+      if (m.status !== 'finished') return;
+      if (m.homeScore == null || m.awayScore == null) return;
+
+      const homeTeam = teamMap[m.homeTeam];
+      const awayTeam = teamMap[m.awayTeam];
+      if (!homeTeam || !awayTeam) return;
+
+      const addResult = (owner, result) => {
+        if (!owner || !tally[owner]) return;
+        tally[owner].played++;
+        tally[owner][result]++;
+      };
+
+      if (m.homeScore > m.awayScore) {
+        addResult(homeTeam.owner, 'wins');
+        addResult(awayTeam.owner, 'losses');
+      } else if (m.homeScore < m.awayScore) {
+        addResult(homeTeam.owner, 'losses');
+        addResult(awayTeam.owner, 'wins');
+      } else {
+        addResult(homeTeam.owner, 'draws');
+        addResult(awayTeam.owner, 'draws');
+      }
+    });
+
+    return tally;
+  }
+
+  function renderTallyPage() {
+    const tally = computeTally();
+    const wrap  = el('div', 'tally-page');
+
+    wrap.appendChild(el('div', 'section-label', 'Standings'));
+
+    const list = el('div', 'tally-list');
+
+    DATA.players.forEach((p, i) => {
+      const t = tally[p.name];
+      const card = el('div', 'tally-card');
+
+      const bar = el('div', 'tally-bar');
+      bar.style.background = p.colour;
+      card.appendChild(bar);
+
+      const rank = el('div', 'tally-rank', String(i + 1));
+
+      const dot = el('span', 'tally-dot');
+      dot.style.background = p.colour;
+
+      const name = el('div', 'tally-name', p.name);
+
+      const nameWrap = el('div', 'tally-name-wrap');
+      nameWrap.appendChild(dot);
+      nameWrap.appendChild(name);
+
+      const stats = el('div', 'tally-stats');
+
+      [['W', t.wins, 'tally-stat--win'],
+       ['D', t.draws, 'tally-stat--draw'],
+       ['L', t.losses, 'tally-stat--loss']].forEach(([label, val, cls]) => {
+        const stat = el('div', 'tally-stat ' + cls);
+        stat.appendChild(el('span', 'tally-stat-val', String(val)));
+        stat.appendChild(el('span', 'tally-stat-lbl', label));
+        stats.appendChild(stat);
+      });
+
+      card.appendChild(rank);
+      card.appendChild(nameWrap);
+      card.appendChild(stats);
+      list.appendChild(card);
+    });
+
+    wrap.appendChild(list);
+
+    if (DATA.matches.filter(m => m.status === 'finished').length === 0) {
+      const note = el('div', 'tally-empty');
+      note.textContent = 'No results yet — check back once matches kick off.';
+      wrap.appendChild(note);
+    }
+
+    return wrap;
   }
 
   // ── Placeholder ──────────────────────────────────────
