@@ -412,7 +412,15 @@
 
     const list = el('div', 'tally-list');
 
-    DATA.players.forEach((p, i) => {
+    const sorted = [...DATA.players].sort((a, b) => {
+      const ta = tally[a.name], tb = tally[b.name];
+      if (tb.wins   !== ta.wins)   return tb.wins   - ta.wins;
+      if (tb.draws  !== ta.draws)  return tb.draws  - ta.draws;
+      if (ta.losses !== tb.losses) return ta.losses - tb.losses;
+      return DATA.players.indexOf(a) - DATA.players.indexOf(b);
+    });
+
+    sorted.forEach((p, i) => {
       const t = tally[p.name];
       const card = el('div', 'tally-card');
 
