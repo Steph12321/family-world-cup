@@ -131,7 +131,7 @@ const DATA = {
     // ── Group E ──────────────────────────────────────────────
     // MD1
     { id: "gs_e1", stage: "Group E", homeTeam: "ger", awayTeam: "cuw", kickoffUTC: "2026-06-14T17:00:00Z", homeScore: 7, awayScore: 1, status: "finished" },
-    { id: "gs_e2", stage: "Group E", homeTeam: "civ", awayTeam: "ecu", kickoffUTC: "2026-06-14T23:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_e2", stage: "Group E", homeTeam: "civ", awayTeam: "ecu", kickoffUTC: "2026-06-14T23:00:00Z", homeScore: 1, awayScore: 0, status: "finished" },
     // MD2
     { id: "gs_e3", stage: "Group E", homeTeam: "ger", awayTeam: "civ", kickoffUTC: "2026-06-20T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_e4", stage: "Group E", homeTeam: "ecu", awayTeam: "cuw", kickoffUTC: "2026-06-21T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
@@ -141,8 +141,8 @@ const DATA = {
 
     // ── Group F ──────────────────────────────────────────────
     // MD1
-    { id: "gs_f1", stage: "Group F", homeTeam: "ned", awayTeam: "jpn", kickoffUTC: "2026-06-14T20:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
-    { id: "gs_f2", stage: "Group F", homeTeam: "swe", awayTeam: "tun", kickoffUTC: "2026-06-15T02:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_f1", stage: "Group F", homeTeam: "ned", awayTeam: "jpn", kickoffUTC: "2026-06-14T20:00:00Z", homeScore: 2, awayScore: 2, status: "finished" },
+    { id: "gs_f2", stage: "Group F", homeTeam: "swe", awayTeam: "tun", kickoffUTC: "2026-06-15T02:00:00Z", homeScore: 5, awayScore: 1, status: "finished" },
     // MD2
     { id: "gs_f3", stage: "Group F", homeTeam: "ned", awayTeam: "swe", kickoffUTC: "2026-06-20T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_f4", stage: "Group F", homeTeam: "tun", awayTeam: "jpn", kickoffUTC: "2026-06-21T04:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
