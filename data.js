@@ -89,7 +89,7 @@ const DATA = {
     { id: "gs_a1", stage: "Group A", homeTeam: "mex", awayTeam: "rsa", kickoffUTC: "2026-06-11T19:00:00Z", homeScore: 2, awayScore: 0, status: "finished" },
     { id: "gs_a2", stage: "Group A", homeTeam: "kor", awayTeam: "cze", kickoffUTC: "2026-06-12T02:00:00Z", homeScore: 2, awayScore: 1, status: "finished" },
     // MD2
-    { id: "gs_a3", stage: "Group A", homeTeam: "cze", awayTeam: "rsa", kickoffUTC: "2026-06-18T16:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_a3", stage: "Group A", homeTeam: "cze", awayTeam: "rsa", kickoffUTC: "2026-06-18T16:00:00Z", homeScore: 1, awayScore: 1, status: "finished" },
     { id: "gs_a4", stage: "Group A", homeTeam: "mex", awayTeam: "kor", kickoffUTC: "2026-06-19T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     // MD3
     { id: "gs_a5", stage: "Group A", homeTeam: "cze", awayTeam: "mex", kickoffUTC: "2026-06-25T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
@@ -100,7 +100,7 @@ const DATA = {
     { id: "gs_b1", stage: "Group B", homeTeam: "can", awayTeam: "bih", kickoffUTC: "2026-06-12T19:00:00Z", homeScore: 1, awayScore: 1, status: "finished" },
     { id: "gs_b2", stage: "Group B", homeTeam: "qat", awayTeam: "sui", kickoffUTC: "2026-06-13T19:00:00Z", homeScore: 1, awayScore: 1, status: "finished" },
     // MD2
-    { id: "gs_b3", stage: "Group B", homeTeam: "sui", awayTeam: "bih", kickoffUTC: "2026-06-18T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_b3", stage: "Group B", homeTeam: "sui", awayTeam: "bih", kickoffUTC: "2026-06-18T19:00:00Z", homeScore: 0, awayScore: 0, status: "finished" },
     { id: "gs_b4", stage: "Group B", homeTeam: "can", awayTeam: "qat", kickoffUTC: "2026-06-18T22:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     // MD3
     { id: "gs_b5", stage: "Group B", homeTeam: "sui", awayTeam: "can", kickoffUTC: "2026-06-24T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
