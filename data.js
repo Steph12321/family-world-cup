@@ -156,7 +156,7 @@ const DATA = {
     { id: "gs_g2", stage: "Group G", homeTeam: "irn", awayTeam: "nzl", kickoffUTC: "2026-06-16T01:00:00Z", homeScore: 2, awayScore: 2, status: "finished" },
     // MD2
     { id: "gs_g3", stage: "Group G", homeTeam: "bel", awayTeam: "irn", kickoffUTC: "2026-06-21T19:00:00Z", homeScore: 0, awayScore: 0, status: "finished" },
-    { id: "gs_g4", stage: "Group G", homeTeam: "nzl", awayTeam: "egy", kickoffUTC: "2026-06-22T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_g4", stage: "Group G", homeTeam: "nzl", awayTeam: "egy", kickoffUTC: "2026-06-22T01:00:00Z", homeScore: 1, awayScore: 3, status: "finished" },
     // MD3
     { id: "gs_g5", stage: "Group G", homeTeam: "egy", awayTeam: "irn", kickoffUTC: "2026-06-27T03:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_g6", stage: "Group G", homeTeam: "nzl", awayTeam: "bel", kickoffUTC: "2026-06-27T03:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
@@ -167,7 +167,7 @@ const DATA = {
     { id: "gs_h2", stage: "Group H", homeTeam: "ksa", awayTeam: "uru", kickoffUTC: "2026-06-15T22:00:00Z", homeScore: 1, awayScore: 1, status: "finished" },
     // MD2
     { id: "gs_h3", stage: "Group H", homeTeam: "esp", awayTeam: "ksa", kickoffUTC: "2026-06-21T16:00:00Z", homeScore: 4, awayScore: 0, status: "finished" },
-    { id: "gs_h4", stage: "Group H", homeTeam: "uru", awayTeam: "cpv", kickoffUTC: "2026-06-21T22:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_h4", stage: "Group H", homeTeam: "uru", awayTeam: "cpv", kickoffUTC: "2026-06-21T22:00:00Z", homeScore: 2, awayScore: 2, status: "finished" },
     // MD3
     { id: "gs_h5", stage: "Group H", homeTeam: "cpv", awayTeam: "ksa", kickoffUTC: "2026-06-27T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_h6", stage: "Group H", homeTeam: "uru", awayTeam: "esp", kickoffUTC: "2026-06-27T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
