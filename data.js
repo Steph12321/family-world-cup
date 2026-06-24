@@ -200,7 +200,7 @@ const DATA = {
     { id: "gs_k2", stage: "Group K", homeTeam: "uzb", awayTeam: "col", kickoffUTC: "2026-06-18T02:00:00Z", homeScore: 1, awayScore: 3, status: "finished" },
     // MD2
     { id: "gs_k3", stage: "Group K", homeTeam: "por", awayTeam: "uzb", kickoffUTC: "2026-06-23T17:00:00Z", homeScore: 5, awayScore: 0, status: "finished" },
-    { id: "gs_k4", stage: "Group K", homeTeam: "col", awayTeam: "cod", kickoffUTC: "2026-06-24T02:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_k4", stage: "Group K", homeTeam: "col", awayTeam: "cod", kickoffUTC: "2026-06-24T02:00:00Z", homeScore: 1, awayScore: 0, status: "finished" },
     // MD3
     { id: "gs_k5", stage: "Group K", homeTeam: "col", awayTeam: "por", kickoffUTC: "2026-06-27T23:30:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_k6", stage: "Group K", homeTeam: "cod", awayTeam: "uzb", kickoffUTC: "2026-06-27T23:30:00Z", homeScore: null, awayScore: null, status: "scheduled" },
@@ -210,8 +210,8 @@ const DATA = {
     { id: "gs_l1", stage: "Group L", homeTeam: "eng", awayTeam: "cro", kickoffUTC: "2026-06-17T20:00:00Z", homeScore: 4, awayScore: 2, status: "finished" },
     { id: "gs_l2", stage: "Group L", homeTeam: "gha", awayTeam: "pan", kickoffUTC: "2026-06-17T23:00:00Z", homeScore: 1, awayScore: 0, status: "finished" },
     // MD2
-    { id: "gs_l3", stage: "Group L", homeTeam: "eng", awayTeam: "gha", kickoffUTC: "2026-06-23T20:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
-    { id: "gs_l4", stage: "Group L", homeTeam: "pan", awayTeam: "cro", kickoffUTC: "2026-06-23T23:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_l3", stage: "Group L", homeTeam: "eng", awayTeam: "gha", kickoffUTC: "2026-06-23T20:00:00Z", homeScore: 0, awayScore: 0, status: "finished" },
+    { id: "gs_l4", stage: "Group L", homeTeam: "pan", awayTeam: "cro", kickoffUTC: "2026-06-23T23:00:00Z", homeScore: 0, awayScore: 1, status: "finished" },
     // MD3
     { id: "gs_l5", stage: "Group L", homeTeam: "pan", awayTeam: "eng", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "gs_l6", stage: "Group L", homeTeam: "cro", awayTeam: "gha", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
