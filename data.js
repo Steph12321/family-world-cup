@@ -103,8 +103,8 @@ const DATA = {
     { id: "gs_b3", stage: "Group B", homeTeam: "sui", awayTeam: "bih", kickoffUTC: "2026-06-18T19:00:00Z", homeScore: 4, awayScore: 1, status: "finished" },
     { id: "gs_b4", stage: "Group B", homeTeam: "can", awayTeam: "qat", kickoffUTC: "2026-06-18T22:00:00Z", homeScore: 6, awayScore: 0, status: "finished" },
     // MD3
-    { id: "gs_b5", stage: "Group B", homeTeam: "sui", awayTeam: "can", kickoffUTC: "2026-06-24T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_b6", stage: "Group B", homeTeam: "bih", awayTeam: "qat", kickoffUTC: "2026-06-24T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_b5", stage: "Group B", homeTeam: "sui", awayTeam: "can", kickoffUTC: "2026-06-24T19:00:00Z", homeScore: 2, awayScore: 1, status: "finished" },
+    { id: "gs_b6", stage: "Group B", homeTeam: "bih", awayTeam: "qat", kickoffUTC: "2026-06-24T19:00:00Z", homeScore: 3, awayScore: 1, status: "finished" },
 
     // ── Group C ──────────────────────────────────────────────
     // MD1
