@@ -92,8 +92,8 @@ const DATA = {
     { id: "gs_a3", stage: "Group A", homeTeam: "cze", awayTeam: "rsa", kickoffUTC: "2026-06-18T16:00:00Z", homeScore: 1, awayScore: 1, status: "finished" },
     { id: "gs_a4", stage: "Group A", homeTeam: "mex", awayTeam: "kor", kickoffUTC: "2026-06-19T01:00:00Z", homeScore: 1, awayScore: 0, status: "finished" },
     // MD3
-    { id: "gs_a5", stage: "Group A", homeTeam: "cze", awayTeam: "mex", kickoffUTC: "2026-06-25T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_a6", stage: "Group A", homeTeam: "rsa", awayTeam: "kor", kickoffUTC: "2026-06-25T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_a5", stage: "Group A", homeTeam: "cze", awayTeam: "mex", kickoffUTC: "2026-06-25T01:00:00Z", homeScore: 0, awayScore: 3, status: "finished" },
+    { id: "gs_a6", stage: "Group A", homeTeam: "rsa", awayTeam: "kor", kickoffUTC: "2026-06-25T01:00:00Z", homeScore: 1, awayScore: 0, status: "finished" },
 
     // ── Group B ──────────────────────────────────────────────
     // MD1
@@ -114,8 +114,8 @@ const DATA = {
     { id: "gs_c3", stage: "Group C", homeTeam: "sco", awayTeam: "mar", kickoffUTC: "2026-06-19T22:00:00Z", homeScore: 0, awayScore: 1, status: "finished" },
     { id: "gs_c4", stage: "Group C", homeTeam: "bra", awayTeam: "hai", kickoffUTC: "2026-06-20T01:00:00Z", homeScore: 3, awayScore: 0, status: "finished" },
     // MD3
-    { id: "gs_c5", stage: "Group C", homeTeam: "sco", awayTeam: "bra", kickoffUTC: "2026-06-24T22:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_c6", stage: "Group C", homeTeam: "mar", awayTeam: "hai", kickoffUTC: "2026-06-24T22:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_c5", stage: "Group C", homeTeam: "sco", awayTeam: "bra", kickoffUTC: "2026-06-24T22:00:00Z", homeScore: 0, awayScore: 3, status: "finished" },
+    { id: "gs_c6", stage: "Group C", homeTeam: "mar", awayTeam: "hai", kickoffUTC: "2026-06-24T22:00:00Z", homeScore: 4, awayScore: 2, status: "finished" },
 
     // ── Group D ──────────────────────────────────────────────
     // MD1
