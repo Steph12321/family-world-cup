@@ -4,8 +4,9 @@
   'use strict';
 
   // ── State ──────────────────────────────────────────
-  let activeFilter = null; // null = All, or player name string
-  let currentPage  = 'main'; // 'main' | 'tally'
+  let activeFilter      = null;   // null = All, or player name string
+  let currentPage       = 'main'; // 'main' | 'tally'
+  let collapsedSections = new Set(); // section keys currently collapsed
 
   // ── Lookup maps built on init ──────────────────────
   const playerMap = {};  // name → player object
@@ -160,38 +161,55 @@
     return chip;
   }
 
+  // ── Section toggle (collapsible header) ─────────────
+
+  function renderSectionToggle(labelText, key) {
+    const btn = el('button', 'section-toggle');
+    btn.type = 'button';
+    if (collapsedSections.has(key)) btn.classList.add('is-collapsed');
+
+    btn.appendChild(el('span', 'section-toggle-label', labelText));
+    btn.appendChild(el('span', 'section-toggle-chevron'));
+
+    btn.addEventListener('click', () => {
+      if (collapsedSections.has(key)) collapsedSections.delete(key);
+      else collapsedSections.add(key);
+      render();
+    });
+    return btn;
+  }
+
   // ── Group section ────────────────────────────────────
 
   function renderGroupSection(eliminated) {
     const wrap = el('div');
 
-    wrap.appendChild(el('div', 'section-label', 'Group Stage'));
+    wrap.appendChild(renderSectionToggle('Group Stage', 'group-stage'));
 
-    // 3-column grid
-    const grid = el('div', 'group-grid');
-    ['A','B','C','D','E','F','G','H','I','J','K','L'].forEach(letter => {
-      const groupTeams = DATA.teams.filter(t => t.group === letter);
-      grid.appendChild(renderGroupCard(letter, groupTeams, eliminated));
-    });
-    wrap.appendChild(grid);
+    if (!collapsedSections.has('group-stage')) {
+      const grid = el('div', 'group-grid');
+      ['A','B','C','D','E','F','G','H','I','J','K','L'].forEach(letter => {
+        const groupTeams = DATA.teams.filter(t => t.group === letter);
+        grid.appendChild(renderGroupCard(letter, groupTeams, eliminated));
+      });
+      wrap.appendChild(grid);
+    }
 
-    // Group stage match cards (sample fixtures / results)
     const groupMatches = DATA.matches.filter(m => m.stage.startsWith('Group'));
     if (groupMatches.length) {
-      // Sort: finished first, then live, then scheduled; within each by kickoff
       const order = { finished: 0, live: 1, scheduled: 2 };
       const sorted = [...groupMatches].sort((a, b) => {
         if (order[a.status] !== order[b.status]) return order[a.status] - order[b.status];
         return new Date(a.kickoffUTC) - new Date(b.kickoffUTC);
       });
 
-      const subLabel = el('div', 'section-label', 'Fixtures & Results');
-      subLabel.style.paddingTop = '18px';
-      wrap.appendChild(subLabel);
+      wrap.appendChild(renderSectionToggle('Fixtures & Results', 'fixtures'));
 
-      const list = el('div', 'matches-list');
-      sorted.forEach(m => list.appendChild(renderMatchCard(m, eliminated)));
-      wrap.appendChild(list);
+      if (!collapsedSections.has('fixtures')) {
+        const list = el('div', 'matches-list');
+        sorted.forEach(m => list.appendChild(renderMatchCard(m, eliminated)));
+        wrap.appendChild(list);
+      }
     }
 
     return wrap;
@@ -277,11 +295,13 @@
 
       if (!stageMatches.length) return;
 
-      wrap.appendChild(el('div', 'section-label', stage));
+      wrap.appendChild(renderSectionToggle(stage, stage));
 
-      const list = el('div', 'matches-list');
-      stageMatches.forEach(m => list.appendChild(renderMatchCard(m, eliminated)));
-      wrap.appendChild(list);
+      if (!collapsedSections.has(stage)) {
+        const list = el('div', 'matches-list');
+        stageMatches.forEach(m => list.appendChild(renderMatchCard(m, eliminated)));
+        wrap.appendChild(list);
+      }
     });
 
     return wrap;
@@ -369,6 +389,44 @@
 
   // ── Tally page ───────────────────────────────────────
 
+  function computeTeamsRemaining(eliminated) {
+    const rem = {};
+    DATA.players.forEach(p => {
+      rem[p.name] = DATA.teams.filter(t => t.owner === p.name && !eliminated.has(t.id)).length;
+    });
+    return rem;
+  }
+
+  function computeTeamLastDates() {
+    const dates = {};
+    DATA.matches.forEach(m => {
+      if (m.status !== 'finished') return;
+      [m.homeTeam, m.awayTeam].forEach(tid => {
+        if (!dates[tid] || m.kickoffUTC > dates[tid]) dates[tid] = m.kickoffUTC;
+      });
+    });
+    return dates;
+  }
+
+  function playerElimDate(playerName, eliminated, teamLastDates) {
+    const teams = DATA.teams.filter(t => t.owner === playerName);
+    if (!teams.every(t => eliminated.has(t.id))) return null;
+    let latest = null;
+    teams.forEach(t => {
+      const d = teamLastDates[t.id];
+      if (d && (!latest || d > latest)) latest = d;
+    });
+    return latest;
+  }
+
+  function formatElimDate(utcISO) {
+    const d   = new Date(utcISO);
+    const nzt = new Date(d.getTime() + 12 * 60 * 60 * 1000);
+    const mo  = ['Jan','Feb','Mar','Apr','May','Jun',
+                  'Jul','Aug','Sep','Oct','Nov','Dec'][nzt.getUTCMonth()];
+    return `${nzt.getUTCDate()} ${mo}`;
+  }
+
   function computeTally() {
     const tally = {};
     DATA.players.forEach(p => {
@@ -404,15 +462,62 @@
     return tally;
   }
 
+  function buildTallyCard(p, rank, t, teamsLeft, elimDate) {
+    const card = el('div', 'tally-card');
+
+    const bar = el('div', 'tally-bar');
+    bar.style.background = p.colour;
+    card.appendChild(bar);
+
+    card.appendChild(el('div', 'tally-rank', rank !== null ? String(rank) : ''));
+
+    const dot = el('span', 'tally-dot');
+    dot.style.background = p.colour;
+    const nameWrap = el('div', 'tally-name-wrap');
+    nameWrap.appendChild(dot);
+    nameWrap.appendChild(el('div', 'tally-name', p.name));
+    card.appendChild(nameWrap);
+
+    const statsGroup = el('div', 'tally-stats-group');
+    const stats = el('div', 'tally-stats');
+    [['W', t.wins, 'tally-stat--win'],
+     ['D', t.draws, 'tally-stat--draw'],
+     ['L', t.losses, 'tally-stat--loss']].forEach(([label, val, cls]) => {
+      const stat = el('div', 'tally-stat ' + cls);
+      stat.appendChild(el('span', 'tally-stat-val', String(val)));
+      stat.appendChild(el('span', 'tally-stat-lbl', label));
+      stats.appendChild(stat);
+    });
+    statsGroup.appendChild(stats);
+
+    if (elimDate !== null) {
+      const datePill = el('div', 'tally-elim-date');
+      datePill.textContent = elimDate;
+      statsGroup.appendChild(datePill);
+    } else if (teamsLeft !== null) {
+      const teamsStat = el('div', 'tally-stat tally-stat--teams');
+      teamsStat.appendChild(el('span', 'tally-stat-val', String(teamsLeft)));
+      teamsStat.appendChild(el('span', 'tally-stat-lbl', 'Left'));
+      statsGroup.appendChild(teamsStat);
+    }
+
+    card.appendChild(statsGroup);
+    return card;
+  }
+
   function renderTallyPage() {
-    const tally = computeTally();
-    const wrap  = el('div', 'tally-page');
+    const eliminated    = buildEliminatedSet();
+    const tally         = computeTally();
+    const teamsRem      = computeTeamsRemaining(eliminated);
+    const teamLastDates = computeTeamLastDates();
+    const wrap          = el('div', 'tally-page');
 
     wrap.appendChild(el('div', 'section-label', 'Standings'));
 
-    const list = el('div', 'tally-list');
+    const active = DATA.players.filter(p => teamsRem[p.name] > 0);
+    const elimd  = DATA.players.filter(p => teamsRem[p.name] === 0);
 
-    const sorted = [...DATA.players].sort((a, b) => {
+    active.sort((a, b) => {
       const ta = tally[a.name], tb = tally[b.name];
       if (tb.wins   !== ta.wins)   return tb.wins   - ta.wins;
       if (tb.draws  !== ta.draws)  return tb.draws  - ta.draws;
@@ -420,43 +525,34 @@
       return DATA.players.indexOf(a) - DATA.players.indexOf(b);
     });
 
-    sorted.forEach((p, i) => {
-      const t = tally[p.name];
-      const card = el('div', 'tally-card');
+    const list = el('div', 'tally-list');
+    active.forEach((p, i) => {
+      list.appendChild(buildTallyCard(p, i + 1, tally[p.name], teamsRem[p.name], null));
+    });
+    wrap.appendChild(list);
 
-      const bar = el('div', 'tally-bar');
-      bar.style.background = p.colour;
-      card.appendChild(bar);
-
-      const rank = el('div', 'tally-rank', String(i + 1));
-
-      const dot = el('span', 'tally-dot');
-      dot.style.background = p.colour;
-
-      const name = el('div', 'tally-name', p.name);
-
-      const nameWrap = el('div', 'tally-name-wrap');
-      nameWrap.appendChild(dot);
-      nameWrap.appendChild(name);
-
-      const stats = el('div', 'tally-stats');
-
-      [['W', t.wins, 'tally-stat--win'],
-       ['D', t.draws, 'tally-stat--draw'],
-       ['L', t.losses, 'tally-stat--loss']].forEach(([label, val, cls]) => {
-        const stat = el('div', 'tally-stat ' + cls);
-        stat.appendChild(el('span', 'tally-stat-val', String(val)));
-        stat.appendChild(el('span', 'tally-stat-lbl', label));
-        stats.appendChild(stat);
+    if (elimd.length) {
+      const elimWithDates = elimd.map(p => ({
+        player: p,
+        date: playerElimDate(p.name, eliminated, teamLastDates)
+      }));
+      elimWithDates.sort((a, b) => {
+        if (!a.date && !b.date) return 0;
+        if (!a.date) return 1;
+        if (!b.date) return -1;
+        return b.date > a.date ? 1 : b.date < a.date ? -1 : 0;
       });
 
-      card.appendChild(rank);
-      card.appendChild(nameWrap);
-      card.appendChild(stats);
-      list.appendChild(card);
-    });
-
-    wrap.appendChild(list);
+      wrap.appendChild(el('div', 'section-label', 'Eliminated'));
+      const elimList = el('div', 'tally-list');
+      elimWithDates.forEach(({ player, date }) => {
+        elimList.appendChild(
+          buildTallyCard(player, null, tally[player.name], null,
+                         date ? formatElimDate(date) : null)
+        );
+      });
+      wrap.appendChild(elimList);
+    }
 
     if (DATA.matches.filter(m => m.status === 'finished').length === 0) {
       const note = el('div', 'tally-empty');
