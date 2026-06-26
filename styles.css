@@ -194,9 +194,50 @@ body {
   padding: 20px 16px 9px;
   font-size: 11px;
   font-weight: 700;
-  color: var(--muted);
+  color: var(--text);
   text-transform: uppercase;
   letter-spacing: 0.8px;
+}
+
+/* ── SECTION TOGGLE (collapsible) ───────────────── */
+
+.section-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 16px 10px;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  gap: 10px;
+}
+
+.section-toggle:active { opacity: 0.7; }
+
+.section-toggle-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.section-toggle-chevron {
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  display: inline-block;
+  flex-shrink: 0;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease;
+}
+
+.section-toggle.is-collapsed .section-toggle-chevron {
+  transform: rotate(45deg);
 }
 
 /* ── GROUP GRID ─────────────────────────────────── */
@@ -483,6 +524,13 @@ body {
   text-overflow: ellipsis;
 }
 
+.tally-stats-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
 .tally-stats {
   display: flex;
   gap: 6px;
@@ -517,9 +565,21 @@ body {
   line-height: 1;
 }
 
-.tally-stat--win  .tally-stat-val { color: #16a34a; }
-.tally-stat--loss .tally-stat-val { color: #dc2626; }
-.tally-stat--draw .tally-stat-val { color: var(--muted); }
+.tally-stat--win   .tally-stat-val { color: #16a34a; }
+.tally-stat--loss  .tally-stat-val { color: #dc2626; }
+.tally-stat--draw  .tally-stat-val { color: var(--muted); }
+.tally-stat--teams .tally-stat-val { color: var(--text); }
+
+.tally-elim-date {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg);
+  border: var(--bw) solid var(--border);
+  border-radius: 8px;
+  padding: 5px 8px;
+  white-space: nowrap;
+}
 
 .tally-empty {
   margin: 16px 16px 0;
