@@ -180,8 +180,8 @@ const DATA = {
     { id: "gs_i3", stage: "Group I", homeTeam: "fra", awayTeam: "irq", kickoffUTC: "2026-06-22T21:00:00Z", homeScore: 3, awayScore: 0, status: "finished" },
     { id: "gs_i4", stage: "Group I", homeTeam: "nor", awayTeam: "sen", kickoffUTC: "2026-06-23T00:00:00Z", homeScore: 3, awayScore: 2, status: "finished" },
     // MD3
-    { id: "gs_i5", stage: "Group I", homeTeam: "nor", awayTeam: "fra", kickoffUTC: "2026-06-26T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_i6", stage: "Group I", homeTeam: "sen", awayTeam: "irq", kickoffUTC: "2026-06-26T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_i5", stage: "Group I", homeTeam: "nor", awayTeam: "fra", kickoffUTC: "2026-06-26T19:00:00Z", homeScore: 1, awayScore: 4, status: "finished" },
+    { id: "gs_i6", stage: "Group I", homeTeam: "sen", awayTeam: "irq", kickoffUTC: "2026-06-26T19:00:00Z", homeScore: 5, awayScore: 0, status: "finished" },
 
     // ── Group J ──────────────────────────────────────────────
     // MD1
@@ -220,6 +220,7 @@ const DATA = {
     { id: "r32_01", stage: "Round of 32", homeTeam: "rsa", awayTeam: "can", kickoffUTC: "2026-06-28T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_02", stage: "Round of 32", homeTeam: "bra", awayTeam: "jpn", kickoffUTC: "2026-06-29T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_03", stage: "Round of 32", homeTeam: "ned", awayTeam: "mar", kickoffUTC: "2026-06-30T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_05", stage: "Round of 32", homeTeam: "civ", awayTeam: "nor", kickoffUTC: "2026-06-30T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_04", stage: "Round of 32", homeTeam: "usa", awayTeam: "bih", kickoffUTC: "2026-07-02T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
 
   ],
