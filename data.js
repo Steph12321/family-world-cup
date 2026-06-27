@@ -169,8 +169,8 @@ const DATA = {
     { id: "gs_h3", stage: "Group H", homeTeam: "esp", awayTeam: "ksa", kickoffUTC: "2026-06-21T16:00:00Z", homeScore: 4, awayScore: 0, status: "finished" },
     { id: "gs_h4", stage: "Group H", homeTeam: "uru", awayTeam: "cpv", kickoffUTC: "2026-06-21T22:00:00Z", homeScore: 2, awayScore: 2, status: "finished" },
     // MD3
-    { id: "gs_h5", stage: "Group H", homeTeam: "cpv", awayTeam: "ksa", kickoffUTC: "2026-06-27T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_h6", stage: "Group H", homeTeam: "uru", awayTeam: "esp", kickoffUTC: "2026-06-27T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_h5", stage: "Group H", homeTeam: "cpv", awayTeam: "ksa", kickoffUTC: "2026-06-27T00:00:00Z", homeScore: 2, awayScore: 0, status: "finished" },
+    { id: "gs_h6", stage: "Group H", homeTeam: "uru", awayTeam: "esp", kickoffUTC: "2026-06-27T00:00:00Z", homeScore: 0, awayScore: 0, status: "finished" },
 
     // ── Group I ──────────────────────────────────────────────
     // MD1
@@ -221,11 +221,20 @@ const DATA = {
     { id: "r32_02", stage: "Round of 32", homeTeam: "bra", awayTeam: "jpn", kickoffUTC: "2026-06-29T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_03", stage: "Round of 32", homeTeam: "ned", awayTeam: "mar", kickoffUTC: "2026-06-30T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_05", stage: "Round of 32", homeTeam: "civ", awayTeam: "nor", kickoffUTC: "2026-06-30T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "r32_04", stage: "Round of 32", homeTeam: "usa", awayTeam: "bih", kickoffUTC: "2026-07-02T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
+    { id: "r32_04", stage: "Round of 32", homeTeam: "usa", awayTeam: "bih", kickoffUTC: "2026-07-02T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_06", stage: "Round of 32", homeTeam: "ger", awayTeam: "par", kickoffUTC: "2026-06-29T20:30:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_07", stage: "Round of 32", homeTeam: "fra", awayTeam: "swe", kickoffUTC: "2026-06-30T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_08", stage: "Round of 32", homeTeam: "mex", awayTeam: "ecu", kickoffUTC: "2026-07-02T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_09", stage: "Round of 32", homeTeam: "eng", awayTeam: "sen", kickoffUTC: "2026-07-01T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_12", stage: "Round of 32", homeTeam: "por", awayTeam: "gha", kickoffUTC: "2026-07-02T23:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_13", stage: "Round of 32", homeTeam: "sui", awayTeam: "bel", kickoffUTC: "2026-07-03T03:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_14", stage: "Round of 32", homeTeam: "aus", awayTeam: "nzl", kickoffUTC: "2026-07-03T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_15", stage: "Round of 32", homeTeam: "arg", awayTeam: "cpv", kickoffUTC: "2026-07-03T22:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_16", stage: "Round of 32", homeTeam: "col", awayTeam: "cro", kickoffUTC: "2026-07-04T01:30:00Z", homeScore: null, awayScore: null, status: "scheduled" }
 
   ],
 
   // Manual override: add team IDs here to mark them eliminated
   // regardless of match data (e.g. after group stage is complete)
-  eliminated: []
+  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor"]
 };
