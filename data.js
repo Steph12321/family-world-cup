@@ -217,7 +217,7 @@ const DATA = {
     { id: "gs_l6", stage: "Group L", homeTeam: "cro", awayTeam: "gha", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: 2, awayScore: 1, status: "finished" },
 
     // ── Round of 32 ──────────────────────────────────────────
-    { id: "r32_01", stage: "Round of 32", homeTeam: "rsa", awayTeam: "can", kickoffUTC: "2026-06-28T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_01", stage: "Round of 32", homeTeam: "rsa", awayTeam: "can", kickoffUTC: "2026-06-28T19:00:00Z", homeScore: 0, awayScore: 1, status: "finished" },
     { id: "r32_02", stage: "Round of 32", homeTeam: "bra", awayTeam: "jpn", kickoffUTC: "2026-06-29T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_03", stage: "Round of 32", homeTeam: "ned", awayTeam: "mar", kickoffUTC: "2026-06-30T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_05", stage: "Round of 32", homeTeam: "civ", awayTeam: "nor", kickoffUTC: "2026-06-30T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
@@ -238,5 +238,5 @@ const DATA = {
 
   // Manual override: add team IDs here to mark them eliminated
   // regardless of match data (e.g. after group stage is complete)
-  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn"]
+  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa"]
 };
