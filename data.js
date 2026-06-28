@@ -191,8 +191,8 @@ const DATA = {
     { id: "gs_j3", stage: "Group J", homeTeam: "arg", awayTeam: "aut", kickoffUTC: "2026-06-22T17:00:00Z", homeScore: 2, awayScore: 0, status: "finished" },
     { id: "gs_j4", stage: "Group J", homeTeam: "jor", awayTeam: "alg", kickoffUTC: "2026-06-23T03:00:00Z", homeScore: 1, awayScore: 2, status: "finished" },
     // MD3
-    { id: "gs_j5", stage: "Group J", homeTeam: "alg", awayTeam: "aut", kickoffUTC: "2026-06-28T02:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_j6", stage: "Group J", homeTeam: "jor", awayTeam: "arg", kickoffUTC: "2026-06-28T02:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_j5", stage: "Group J", homeTeam: "alg", awayTeam: "aut", kickoffUTC: "2026-06-28T02:00:00Z", homeScore: 3, awayScore: 3, status: "finished" },
+    { id: "gs_j6", stage: "Group J", homeTeam: "jor", awayTeam: "arg", kickoffUTC: "2026-06-28T02:00:00Z", homeScore: 1, awayScore: 3, status: "finished" },
 
     // ── Group K ──────────────────────────────────────────────
     // MD1
@@ -202,8 +202,8 @@ const DATA = {
     { id: "gs_k3", stage: "Group K", homeTeam: "por", awayTeam: "uzb", kickoffUTC: "2026-06-23T17:00:00Z", homeScore: 5, awayScore: 0, status: "finished" },
     { id: "gs_k4", stage: "Group K", homeTeam: "col", awayTeam: "cod", kickoffUTC: "2026-06-24T02:00:00Z", homeScore: 1, awayScore: 0, status: "finished" },
     // MD3
-    { id: "gs_k5", stage: "Group K", homeTeam: "col", awayTeam: "por", kickoffUTC: "2026-06-27T23:30:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "gs_k6", stage: "Group K", homeTeam: "cod", awayTeam: "uzb", kickoffUTC: "2026-06-27T23:30:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "gs_k5", stage: "Group K", homeTeam: "col", awayTeam: "por", kickoffUTC: "2026-06-27T23:30:00Z", homeScore: 0, awayScore: 0, status: "finished" },
+    { id: "gs_k6", stage: "Group K", homeTeam: "cod", awayTeam: "uzb", kickoffUTC: "2026-06-27T23:30:00Z", homeScore: 3, awayScore: 1, status: "finished" },
 
     // ── Group L ──────────────────────────────────────────────
     // MD1
@@ -213,8 +213,8 @@ const DATA = {
     { id: "gs_l3", stage: "Group L", homeTeam: "eng", awayTeam: "gha", kickoffUTC: "2026-06-23T20:00:00Z", homeScore: 0, awayScore: 0, status: "finished" },
     { id: "gs_l4", stage: "Group L", homeTeam: "pan", awayTeam: "cro", kickoffUTC: "2026-06-23T23:00:00Z", homeScore: 0, awayScore: 1, status: "finished" },
     // MD3
-    { id: "gs_l5", stage: "Group L", homeTeam: "pan", awayTeam: "eng", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
-    { id: "gs_l6", stage: "Group L", homeTeam: "cro", awayTeam: "gha", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
+    { id: "gs_l5", stage: "Group L", homeTeam: "pan", awayTeam: "eng", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: 0, awayScore: 2, status: "finished" },
+    { id: "gs_l6", stage: "Group L", homeTeam: "cro", awayTeam: "gha", kickoffUTC: "2026-06-27T21:00:00Z", homeScore: 2, awayScore: 1, status: "finished" },
 
     // ── Round of 32 ──────────────────────────────────────────
     { id: "r32_01", stage: "Round of 32", homeTeam: "rsa", awayTeam: "can", kickoffUTC: "2026-06-28T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
@@ -225,11 +225,11 @@ const DATA = {
     { id: "r32_06", stage: "Round of 32", homeTeam: "ger", awayTeam: "par", kickoffUTC: "2026-06-29T20:30:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_07", stage: "Round of 32", homeTeam: "fra", awayTeam: "swe", kickoffUTC: "2026-06-30T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_08", stage: "Round of 32", homeTeam: "mex", awayTeam: "ecu", kickoffUTC: "2026-07-02T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "r32_09", stage: "Round of 32", homeTeam: "eng", awayTeam: "sen", kickoffUTC: "2026-07-01T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "r32_10", stage: "Round of 32", homeTeam: "bel", awayTeam: "kor", kickoffUTC: "2026-07-01T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_09", stage: "Round of 32", homeTeam: "eng", awayTeam: "cod", kickoffUTC: "2026-07-01T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_10", stage: "Round of 32", homeTeam: "bel", awayTeam: "sen", kickoffUTC: "2026-07-01T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_11", stage: "Round of 32", homeTeam: "esp", awayTeam: "aut", kickoffUTC: "2026-07-02T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_12", stage: "Round of 32", homeTeam: "por", awayTeam: "gha", kickoffUTC: "2026-07-02T23:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "r32_13", stage: "Round of 32", homeTeam: "sui", awayTeam: "irn", kickoffUTC: "2026-07-03T03:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r32_13", stage: "Round of 32", homeTeam: "sui", awayTeam: "alg", kickoffUTC: "2026-07-03T03:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_14", stage: "Round of 32", homeTeam: "aus", awayTeam: "egy", kickoffUTC: "2026-07-03T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_15", stage: "Round of 32", homeTeam: "arg", awayTeam: "cpv", kickoffUTC: "2026-07-03T22:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r32_16", stage: "Round of 32", homeTeam: "col", awayTeam: "cro", kickoffUTC: "2026-07-04T01:30:00Z", homeScore: null, awayScore: null, status: "scheduled" }
@@ -238,5 +238,5 @@ const DATA = {
 
   // Manual override: add team IDs here to mark them eliminated
   // regardless of match data (e.g. after group stage is complete)
-  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru"]
+  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn"]
 };
