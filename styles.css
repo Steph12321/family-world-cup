@@ -305,8 +305,9 @@ body {
   min-width: 0;
 }
 
-/* eliminated state */
-.team-row.is-elim {
+/* eliminated state — bar keeps full colour so the owner stays identifiable */
+.team-row.is-elim .team-flag,
+.team-row.is-elim .team-name {
   opacity: 0.28;
 }
 .team-row.is-elim .team-name {
@@ -314,7 +315,8 @@ body {
 }
 
 /* filter states */
-.team-row.is-highlight-elim {
+.team-row.is-highlight-elim .team-flag,
+.team-row.is-highlight-elim .team-name {
   opacity: 0.42;
 }
 .team-row.is-highlight-elim .team-name {
@@ -433,8 +435,10 @@ body {
   background: var(--card);
 }
 
-/* eliminated in finished match */
-.match-team-row.is-elim {
+/* eliminated in finished match — bar keeps full colour so the owner stays identifiable */
+.match-team-row.is-elim .match-flag,
+.match-team-row.is-elim .match-info,
+.match-team-row.is-elim .score-pill {
   opacity: 0.3;
 }
 .match-team-row.is-elim .match-team-name {
@@ -452,7 +456,9 @@ body {
 .match-team-row.is-dim-filter .score-pill {
   opacity: 0.3;
 }
-.match-team-row.is-highlight-elim {
+.match-team-row.is-highlight-elim .match-flag,
+.match-team-row.is-highlight-elim .match-info,
+.match-team-row.is-highlight-elim .score-pill {
   opacity: 0.45;
 }
 .match-team-row.is-highlight-elim .match-team-name {
