@@ -235,12 +235,13 @@
 
     if (isElim && isOwner) {
       row.classList.add('is-highlight-elim');
+      row.style.background = `rgba(${hexToRgb(colour)}, 0.11)`;
+    } else if (activeFilter !== null && !isOwner) {
+      row.classList.add('is-dim-filter');
     } else if (isElim) {
       row.classList.add('is-elim');
     } else if (activeFilter !== null && isOwner) {
       row.style.background = `rgba(${hexToRgb(colour)}, 0.11)`;
-    } else if (activeFilter !== null && !isOwner) {
-      row.classList.add('is-dim-filter');
     }
 
     const bar = el('div', 'team-bar');
@@ -358,12 +359,13 @@
 
     if (isElim && isOwner) {
       row.classList.add('is-highlight-elim');
+      row.style.background = `rgba(${hexToRgb(colour)}, 0.08)`;
+    } else if (activeFilter !== null && !isOwner) {
+      row.classList.add('is-dim-filter');
     } else if (isElim) {
       row.classList.add('is-elim');
     } else if (activeFilter !== null && isOwner) {
       row.style.background = `rgba(${hexToRgb(colour)}, 0.08)`;
-    } else if (activeFilter !== null && !isOwner) {
-      row.classList.add('is-dim-filter');
     }
 
     const bar = el('div', 'match-bar');
