@@ -235,12 +235,12 @@ const DATA = {
     { id: "r32_16", stage: "Round of 32", homeTeam: "col", awayTeam: "gha", kickoffUTC: "2026-07-04T01:30:00Z", homeScore: 1, awayScore: 0, status: "finished" },
 
     // ── Round of 16 ──────────────────────────────────────────
-    { id: "r16_01", stage: "Round of 16", homeTeam: "can", awayTeam: "mar", kickoffUTC: "2026-07-04T17:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "r16_02", stage: "Round of 16", homeTeam: "par", awayTeam: "fra", kickoffUTC: "2026-07-04T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r16_01", stage: "Round of 16", homeTeam: "can", awayTeam: "mar", kickoffUTC: "2026-07-04T17:00:00Z", homeScore: 0, awayScore: 3, status: "finished" },
+    { id: "r16_02", stage: "Round of 16", homeTeam: "par", awayTeam: "fra", kickoffUTC: "2026-07-04T21:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
     { id: "r16_03", stage: "Round of 16", homeTeam: "bra", awayTeam: "nor", kickoffUTC: "2026-07-05T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r16_04", stage: "Round of 16", homeTeam: "mex", awayTeam: "eng", kickoffUTC: "2026-07-06T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r16_05", stage: "Round of 16", homeTeam: "por", awayTeam: "esp", kickoffUTC: "2026-07-06T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
-    { id: "r16_06", stage: "Round of 16", homeTeam: "usa", awayTeam: "bel", kickoffUTC: "2026-07-07T04:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r16_06", stage: "Round of 16", homeTeam: "usa", awayTeam: "bel", kickoffUTC: "2026-07-07T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r16_07", stage: "Round of 16", homeTeam: "arg", awayTeam: "egy", kickoffUTC: "2026-07-07T16:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r16_08", stage: "Round of 16", homeTeam: "sui", awayTeam: "col", kickoffUTC: "2026-07-07T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
 
@@ -248,5 +248,5 @@ const DATA = {
 
   // Manual override: add team IDs here to mark them eliminated
   // regardless of match data (e.g. after group stage is complete)
-  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa", "jpn", "ger", "ned", "civ", "swe", "ecu", "cod", "bih", "sen", "aut", "cro", "alg", "aus", "cpv", "gha"]
+  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa", "jpn", "ger", "ned", "civ", "swe", "ecu", "cod", "bih", "sen", "aut", "cro", "alg", "aus", "cpv", "gha", "can"]
 };
