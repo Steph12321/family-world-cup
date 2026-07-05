@@ -237,7 +237,7 @@ const DATA = {
     // ── Round of 16 ──────────────────────────────────────────
     { id: "r16_01", stage: "Round of 16", homeTeam: "can", awayTeam: "mar", kickoffUTC: "2026-07-04T17:00:00Z", homeScore: 0, awayScore: 3, status: "finished" },
     { id: "r16_02", stage: "Round of 16", homeTeam: "par", awayTeam: "fra", kickoffUTC: "2026-07-04T21:00:00Z", homeScore: 0, awayScore: 1, status: "finished" },
-    { id: "r16_03", stage: "Round of 16", homeTeam: "bra", awayTeam: "nor", kickoffUTC: "2026-07-05T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "r16_03", stage: "Round of 16", homeTeam: "bra", awayTeam: "nor", kickoffUTC: "2026-07-05T20:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
     { id: "r16_04", stage: "Round of 16", homeTeam: "mex", awayTeam: "eng", kickoffUTC: "2026-07-06T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r16_05", stage: "Round of 16", homeTeam: "por", awayTeam: "esp", kickoffUTC: "2026-07-06T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "r16_06", stage: "Round of 16", homeTeam: "usa", awayTeam: "bel", kickoffUTC: "2026-07-07T00:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
