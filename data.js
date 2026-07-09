@@ -245,7 +245,7 @@ const DATA = {
     { id: "r16_08", stage: "Round of 16", homeTeam: "sui", awayTeam: "col", kickoffUTC: "2026-07-07T20:00:00Z", homeScore: 0, awayScore: 0, status: "finished" },
 
     // ── Quarter-finals ───────────────────────────────────────
-    { id: "qf_01", stage: "Quarter-finals", homeTeam: "mar", awayTeam: "fra", kickoffUTC: "2026-07-09T20:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "qf_01", stage: "Quarter-finals", homeTeam: "mar", awayTeam: "fra", kickoffUTC: "2026-07-09T20:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
     { id: "qf_02", stage: "Quarter-finals", homeTeam: "esp", awayTeam: "bel", kickoffUTC: "2026-07-10T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "qf_03", stage: "Quarter-finals", homeTeam: "eng", awayTeam: "nor", kickoffUTC: "2026-07-11T21:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
     { id: "qf_04", stage: "Quarter-finals", homeTeam: "arg", awayTeam: "sui", kickoffUTC: "2026-07-12T01:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
