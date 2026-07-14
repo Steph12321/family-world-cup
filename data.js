@@ -251,12 +251,12 @@ const DATA = {
     { id: "qf_04", stage: "Quarter-finals", homeTeam: "arg", awayTeam: "sui", kickoffUTC: "2026-07-12T01:00:00Z", homeScore: 3, awayScore: 1, status: "finished" },
 
     // ── Semi-finals ──────────────────────────────────────────────
-    { id: "sf_01", stage: "Semi-finals", homeTeam: "fra", awayTeam: "esp", kickoffUTC: "2026-07-14T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" },
+    { id: "sf_01", stage: "Semi-finals", homeTeam: "fra", awayTeam: "esp", kickoffUTC: "2026-07-14T19:00:00Z", homeScore: 0, awayScore: 2, status: "finished" },
     { id: "sf_02", stage: "Semi-finals", homeTeam: "eng", awayTeam: "arg", kickoffUTC: "2026-07-15T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
 
   ],
 
   // Manual override: add team IDs here to mark them eliminated
   // regardless of match data (e.g. after group stage is complete)
-  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa", "jpn", "ger", "ned", "civ", "swe", "ecu", "cod", "bih", "sen", "aut", "cro", "alg", "aus", "cpv", "gha", "can", "par", "bra", "mex", "por", "usa", "egy", "col", "mar", "bel", "nor", "sui"]
+  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa", "jpn", "ger", "ned", "civ", "swe", "ecu", "cod", "bih", "sen", "aut", "cro", "alg", "aus", "cpv", "gha", "can", "par", "bra", "mex", "por", "usa", "egy", "col", "mar", "bel", "nor", "sui", "fra"]
 };
