@@ -255,7 +255,7 @@ const DATA = {
     { id: "sf_02", stage: "Semi-finals", homeTeam: "eng", awayTeam: "arg", kickoffUTC: "2026-07-15T19:00:00Z", homeScore: 1, awayScore: 2, status: "finished" },
 
     // ── Third-place play-off ──────────────────────────────────────
-    { id: "tp_01", stage: "Third-place play-off", homeTeam: "fra", awayTeam: "eng", kickoffUTC: "2026-07-18T21:00:00Z", homeScore: 0, awayScore: 0, status: "live" },
+    { id: "tp_01", stage: "Third-place play-off", homeTeam: "fra", awayTeam: "eng", kickoffUTC: "2026-07-18T21:00:00Z", homeScore: 4, awayScore: 6, status: "finished" },
 
     // ── Final ────────────────────────────────────────────────────
     { id: "f_01", stage: "Final", homeTeam: "esp", awayTeam: "arg", kickoffUTC: "2026-07-19T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
