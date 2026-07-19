@@ -258,7 +258,7 @@ const DATA = {
     { id: "tp_01", stage: "Third-place play-off", homeTeam: "fra", awayTeam: "eng", kickoffUTC: "2026-07-18T21:00:00Z", homeScore: 4, awayScore: 6, status: "finished" },
 
     // ── Final ────────────────────────────────────────────────────
-    { id: "f_01", stage: "Final", homeTeam: "esp", awayTeam: "arg", kickoffUTC: "2026-07-19T19:00:00Z", homeScore: null, awayScore: null, status: "scheduled" }
+    { id: "f_01", stage: "Final", homeTeam: "esp", awayTeam: "arg", kickoffUTC: "2026-07-19T19:00:00Z", homeScore: 0, awayScore: 0, status: "live" }
 
   ],
 
