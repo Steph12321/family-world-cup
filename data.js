@@ -258,11 +258,11 @@ const DATA = {
     { id: "tp_01", stage: "Third-place play-off", homeTeam: "fra", awayTeam: "eng", kickoffUTC: "2026-07-18T21:00:00Z", homeScore: 4, awayScore: 6, status: "finished" },
 
     // ── Final ────────────────────────────────────────────────────
-    { id: "f_01", stage: "Final", homeTeam: "esp", awayTeam: "arg", kickoffUTC: "2026-07-19T19:00:00Z", homeScore: 0, awayScore: 0, status: "live" }
+    { id: "f_01", stage: "Final", homeTeam: "esp", awayTeam: "arg", kickoffUTC: "2026-07-19T19:00:00Z", homeScore: 1, awayScore: 0, status: "finished" }
 
   ],
 
   // Manual override: add team IDs here to mark them eliminated
   // regardless of match data (e.g. after group stage is complete)
-  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa", "jpn", "ger", "ned", "civ", "swe", "ecu", "cod", "bih", "sen", "aut", "cro", "alg", "aus", "cpv", "gha", "can", "par", "bra", "mex", "por", "usa", "egy", "col", "mar", "bel", "nor", "sui", "fra", "eng"]
+  eliminated: ["cze", "qat", "hai", "tur", "cuw", "tun", "ksa", "irq", "jor", "nzl", "sco", "uru", "pan", "uzb", "kor", "irn", "rsa", "jpn", "ger", "ned", "civ", "swe", "ecu", "cod", "bih", "sen", "aut", "cro", "alg", "aus", "cpv", "gha", "can", "par", "bra", "mex", "por", "usa", "egy", "col", "mar", "bel", "nor", "sui", "fra", "eng", "arg"]
 };
